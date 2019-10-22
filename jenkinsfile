@@ -1,0 +1,16 @@
+node {
+    stage('git checkout'){
+    git 'https://github.com/asha95/boxfuse-sample-java-war-hello.git'
+    }
+
+    stage('maven build'){
+        sh 'mvn clean package'
+    }
+    stage('deployement in tomcat'){
+      sh 'cp /var/lib/jenkins/workspace/Sample-Project/target/hello-1.0.war /home/tomcat/apache-tomcat-8.5.47/webapp'
+    }
+    
+    
+    
+    
+}
