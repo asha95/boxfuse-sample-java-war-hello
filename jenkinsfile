@@ -7,10 +7,6 @@ node {
         sh 'mvn clean package'
     }
     stage('deployement in tomcat'){
-      sh 'cp /var/lib/jenkins/workspace/Sample-Project/target/*.war /home/tomcat/apache-tomcat-8.5.47/webapp'
+      sh 'cp /var/lib/jenkins/workspace/first-project/target/hello-1.0.war /var/lib/jenkins/apache-tomcat-8.5.47/webapps'
     }
-    
-    
-    
-    
 }
