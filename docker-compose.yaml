@@ -1,6 +1,6 @@
 version: '3'
 services:
-  web:
+  webapp:
     image: blue-fox-image
     ports:
-      - "8000:8080"
+      - "8001:8080"
