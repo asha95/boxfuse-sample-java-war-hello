@@ -7,6 +7,12 @@ node {
         sh 'mvn clean package'
     }
     stage('deployement in tomcat'){
-      sh 'cp /var/lib/jenkins/workspace/first-project/target/hello-1.0.war /var/lib/jenkins/apache-tomcat-8.5.47/webapps'
+      sh 'cp /var/lib/jenkins/workspace/second-project/target/hello-1.0.war /var/lib/jenkins/apache-tomcat-8.5.47/webapps'
+    }
+    stage('Build image'){
+    docker.build('blue-fox-image')
+    }
+    stage('docker-compose'){
+    sh 'docker-compose up -d'
     }
 }
