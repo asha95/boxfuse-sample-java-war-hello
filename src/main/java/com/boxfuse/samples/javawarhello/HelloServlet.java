@@ -1,4 +1,3 @@
-#
 package com.boxfuse.samples.javawarhello;
 
 import javax.servlet.ServletException;
